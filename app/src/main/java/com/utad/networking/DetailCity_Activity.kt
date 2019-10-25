@@ -12,11 +12,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class DetailCity_Activity : AppCompatActivity() {
 
+class DetailCity_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_city_)
+
 
         detailCitiesRecyclerView.layoutManager = LinearLayoutManager(this)
         detailCitiesRecyclerView.setHasFixedSize(true)
