@@ -21,8 +21,9 @@ class MainActivity : AppCompatActivity() {
         citiesRecyclerView.layoutManager = LinearLayoutManager(this)
         citiesRecyclerView.setHasFixedSize(true)
         val citiesAdapter = CitiesAdapter {
-       //     val intent = Intent(this, ProfileActivity::class.java)
+            val intent = Intent(this, DetailCity_Activity::class.java)
             intent.putExtra("id",it.woeid )
+            startActivity(intent)
 
         }
         citiesRecyclerView.adapter = citiesAdapter
