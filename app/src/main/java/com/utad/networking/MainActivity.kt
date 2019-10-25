@@ -1,5 +1,6 @@
 package com.utad.networking
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +21,9 @@ class MainActivity : AppCompatActivity() {
         citiesRecyclerView.layoutManager = LinearLayoutManager(this)
         citiesRecyclerView.setHasFixedSize(true)
         val citiesAdapter = CitiesAdapter {
-            Toast.makeText(this, "${it.title} clicked!!", Toast.LENGTH_SHORT).show()
+       //     val intent = Intent(this, ProfileActivity::class.java)
+            intent.putExtra("id",it.woeid )
+
         }
         citiesRecyclerView.adapter = citiesAdapter
 
