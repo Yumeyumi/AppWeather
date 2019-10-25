@@ -1,5 +1,6 @@
 package com.utad.networking
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.SearchView
 import android.widget.Toast
@@ -22,7 +23,10 @@ class MainActivity : AppCompatActivity() {
         citiesRecyclerView.layoutManager = LinearLayoutManager(this)
         citiesRecyclerView.setHasFixedSize(true)
         val citiesAdapter = CitiesAdapter {
-            Toast.makeText(this, "${it.title} clicked!!", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, DetailCity_Activity::class.java)
+            intent.putExtra("id",it.woeid )
+            startActivity(intent)
+
         }
         citiesRecyclerView.adapter = citiesAdapter
         CitySearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
